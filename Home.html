@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+<style >
+
+    * {
+        font-family: Arial, sans-serif;
+        text-align:  center;
+        
+        background-color: pink;
+    }
+
+    #yesButton {
+        font-size: 30px;
+        color: white;
+        background-color: green;
+    }
+    #noButton {
+        font-size: 30px;
+        color: white;
+        background-color: red;
+    }
+
+    h1 {
+        color:firebrick;
+        font-size: 40px;
+        padding-top: 10px;
+    }
+
+    img {
+        width: 40%;
+        height: 40%;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issy's Valentine's Day Website</title>
+</head>
+<body>
+    <h1>Will You Be My Valentine Isabel Henderson?</h1>
+<button id="yesButton" onclick="window.location.href='yespage.html'">Yes</button>
+<button id="noButton" onclick="makeYesButtonLarger()">No</button>
+<h2> 
+    <script>
+        function makeYesButtonLarger() {
+            var yesButton = document.getElementById('yesButton');
+            var currentSize = parseInt(window.getComputedStyle(yesButton).fontSize);
+            yesButton.style.fontSize = (currentSize + 47) + 'px';
+        }
+
+        var noButton = document.getElementById('noButton');
+        var textChanges = ["Please click Yes!", "Are you sure?", "Really Sure","Pookie Please Click Yes!", "I love you!, Please click Yes!", "If you click Yes, I will give you a kiss!"];
+        var clickCount = 0;
+
+        noButton.addEventListener('click', function() {
+            if (clickCount < textChanges.length) {
+                this.textContent = textChanges[clickCount];
+                clickCount++;
+            } else {
+                this.textContent = textChanges[textChanges.length - 1];
+            }
+            makeYesButtonLarger();
+        });
+    </script>
+
+</h2>
+
+<img src="/Users/jamiegrantham/Desktop/Issys Valentine Website/thegif.gif">
+
+</body>
+</html>
